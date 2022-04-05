@@ -17,7 +17,7 @@ open class ChartDataEntryBase: NSObject
     @objc open var y = 0.0
     
     /// optional spot for additional data this Entry represents
-    @objc open var data: Any?
+    @objc weak open var data: AnyObject?
     
     /// optional icon image
     @objc open var icon: NSUIImage?
@@ -42,7 +42,7 @@ open class ChartDataEntryBase: NSObject
     ///   - y: the y value (the actual value of the entry)
     ///   - data: Space for additional data this Entry represents.
     
-    @objc public convenience init(y: Double, data: Any?)
+    @objc public convenience init(y: Double, data: AnyObject?)
     {
         self.init(y: y)
         
@@ -65,7 +65,7 @@ open class ChartDataEntryBase: NSObject
     ///   - icon: icon image
     ///   - data: Space for additional data this Entry represents.
     
-    @objc public convenience init(y: Double, icon: NSUIImage?, data: Any?)
+    @objc public convenience init(y: Double, icon: NSUIImage?, data: AnyObject?)
     {
         self.init(y: y)
 
